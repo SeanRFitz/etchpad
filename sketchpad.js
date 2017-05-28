@@ -5,17 +5,19 @@ $(document).ready( function() {
 	var grid_width = $('#container').css('height');
 	grid_width = grid_height.replace("px", "");
 	var grid_size = grid_height * grid_width;
-	alert(grid_size);
-	// Determine size of pixels
+	
 	var num_pixels = window.prompt("How many pixels do you want?");
+	// Create sketchpad
+	for (i=0; i <= num_pixels; i++) {
+    	jQuery('<div/>', {class: 'pixel',}).appendTo('#container');
+    }
+
+    // Determine size of pixels
 	var pixel_size = grid_size / num_pixels
 	var pixel_h = Math.sqrt(pixel_size);
 	var pixel_w = Math.sqrt(pixel_size);
-	// Create sketchpad based on input
-    $('#container').on('click', function() {
-    	$('.pixel').css({'height':pixel_h, 'width':pixel_w});
-    	for (i=0; i <= num_pixels; i++) {
-    		jQuery('<div/>', {class: 'pixel',}).appendTo('#container');
-    	}
-    })
+	// Add size of pixels to css class pixel
+    $('.pixel').css({'height':pixel_h, 'width':pixel_w});    	
+    
+
 });
