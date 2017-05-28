@@ -2,17 +2,20 @@
 	margin: 0;
 	padding: 0;
 }
+h1 {
+	text-align: center;
+}
 
 #container {
 	height: 500px;
 	width: 500px;
 	border: 1px solid black;
 	overflow: hidden;
+	margin: auto;
 }
 
 .pixel {
 	display: inline-block;
 	float: left;
-	clear: right;
-	background-color: green;
+	background-color: rgba(230, 230, 230, .25);
 }
